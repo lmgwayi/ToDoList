@@ -24,7 +24,10 @@ function addItem(item) {
     const li = document.createElement('li');
     li.innerHTML = `
     <span class="item">${item}</span>
-    <button class="delete">X</button>
+
+
+    <button class="edit" onclick= "edit(this)">Edit</button>
+    <button class="delete">delete</button>
     `;
     list.appendChild(li);
 
@@ -38,7 +41,17 @@ function addItem(item) {
 saveItems();
 }
 
+function edit(e){
+
+    let i = document.querySelector('.edit')
+
+    let update =prompt("update task", );
+    let a = i.previousElementSibling;
+    e.parentElement.childNodes[1].innerHTML = update
+    console.log(e.parentElement.childNodes[0].innerHTML = update);
+}
+
 function saveItems() {
     const items = Array.from(list.children).map((li) => li.querySelector('.item').textContent);
-    localStorage.setItem('items', JSON.stringify(items));
+    localStorage.setItem('items',JSON.stringify(items));
 }
