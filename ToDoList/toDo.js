@@ -32,7 +32,7 @@ function addItem(item) {
     list.appendChild(li);
 
     const deleteButton = li.querySelector('.delete');
-    deleteButton.addEventListener('click', () => {;
+    deleteButton.addEventListener('click', () => {
     li.remove();
     saveItems();
     
@@ -48,7 +48,9 @@ function edit(e){
     let update =prompt("update task", );
     let a = i.previousElementSibling;
     e.parentElement.childNodes[1].innerHTML = update
-    console.log(e.parentElement.childNodes[0].innerHTML = update);
+    // console.log(e.parentElement.childNodes[0].innerHTML = update);
+
+    
 }
 
 function saveItems() {
