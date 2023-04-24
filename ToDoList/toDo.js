@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
 })
 
 function loadItems() {
-    const items = JSON.parse(localStorage.getItem('item')) || []
+    const items = JSON.parse(localStorage.getItem('items')) || []
     items.forEach((item) => addItem (item));
 }
 
@@ -48,9 +48,10 @@ function edit(e){
     let update =prompt("update task", );
     let a = i.previousElementSibling;
     e.parentElement.childNodes[1].innerHTML = update
-    // console.log(e.parentElement.childNodes[0].innerHTML = update);
+    console.log(e.parentElement.childNodes[0].innerHTML = update);
 
-    
+    localStorage.setItem('items', JSON.stringify(update));
+    saveItems();
 }
 
 function saveItems() {

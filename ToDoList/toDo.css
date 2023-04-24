@@ -6,8 +6,11 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    color: rgb(8, 160, 109);
+    color: rgb(1, 214, 161);
     font-style: italic;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
 
