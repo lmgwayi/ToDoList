@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: #ff0000;
+    font-style: oblique;
+}
+
+a.nav-link {
+    color: #640606;
+}
+.nav-link:hover {
+    color: #8b00009c;
+}
+
+h2.heading {
+    color: #c00a0a;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img.profile-pic {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+section {
+    max-height: 600px;
+}
+.landing-page {
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.seperator {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(235, 87, 116);
+}
+hr {
+    margin-bottom: 0;
+}
