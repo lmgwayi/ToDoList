@@ -1,26 +1,20 @@
 const apiKey = '21452fc695c401b2dbf1b432203486a7';
-const city = 'Cape Town';
-
-
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-.then(response => response.json())
-.then(data => {console.log(data.name);
-})
-
-.catch(error => console.error(error)); 
-
 
 function searchCity() {
-    let input = document.getElementById('searchbutton').value
-    input=input.lowerCase();
-    let y = document.getElementsByClassName('City');
+    let input = document.getElementById('searchbutton').value;
+    input = input.toLowerCase();
 
-    for (i = 0; i > y.length; i++){
-        if (!y[i].innerHTML.LowerCase().includes(input)){
-            y[i].style.display="none";
-        }
-        else {
-            y[i].style.display="list-item";
-        }
-    }
+
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${apiKey}&units=metric`)
+.then(response => response.json())
+.then(data => { 
+    let cityList =document.getElementById('cityList');
+
+    cityList.innerHTML = '';
+
+    let city = document.createElement('li');
+    city.innerHTML = `${data.name}: ${data.main.temp}&deg;C`;
+    cityList.appendChild(city);
+})
+.catch(error => console.error(error));
 }
